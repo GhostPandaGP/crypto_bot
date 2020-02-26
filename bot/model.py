@@ -13,9 +13,11 @@ def prepare_data(param):
         res_frame = []
         for row in current_price['result']:
             res_frame.append(row)
-        usd_btc = pd.DataFrame(res_frame)
-        print(usd_btc.head())
+            row['usd'] = pair
 
+        usd = pd.DataFrame(res_frame)
+
+        return usd
 
 if __name__ == "__main__":
     prepare_data(NOTIFY_PAIR)
